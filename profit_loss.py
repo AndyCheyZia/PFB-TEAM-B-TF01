@@ -70,7 +70,7 @@ def highest_increament(records):
     return day, highest
 
 def output_increasing_scenario(records):
-    day, highest = highest_decreament(records)
+    day, highest = highest_increament(records)
     output = f'\
     [NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n\
     [HIGHEST NET PROFIT SURPLUS] DAY: {day}, AMOUNT: USD{highest}'
@@ -85,7 +85,7 @@ def highest_decreament(records):
     # loop through to find highest profit difference
     for row in records:
         # if this row profit is higher then the current lowest one
-        if row[-1] > lowest:
+        if row[-1] < lowest:
             # replace current one
             day = row[0]
             lowest = row[-1]
