@@ -29,7 +29,7 @@ def find_difference(records):
             previous_row = records[index-1]
             current_row = records[index]
             # find the difference between cureent row and previous row
-            difference = int(current_row[-1]) - int(previous_row[-1])
+            difference = int(current_row[-1]) - int(previous_row[1])
             current_row.append(difference)
     return records
 
@@ -134,9 +134,9 @@ def output_fluctuate_scenario(records):
     for i in range(number):
         if i == 0:
             order = 'HIGHEST'
-        elif i == 2:
+        elif i == 1:
             order = '2ND'
-        elif i == 3:
+        elif i == 2:
             order == '3RD'
 
         # *-1 to remove negative sign
