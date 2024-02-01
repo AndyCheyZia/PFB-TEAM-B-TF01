@@ -73,7 +73,7 @@ def output_increasing_scenario(records):
     day, highest = highest_increament(records)
     output = f'\
     [NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n\
-    [HIGHEST NET PROFIT SURPLUS] DAY: {day}, AMOUNT: SGD{highest}'
+    [HIGHEST NET PROFIT SURPLUS] DAY: {day}, AMOUNT: SGD${highest}'
     return output
 
 
@@ -125,7 +125,7 @@ def output_fluctuate_scenario(records):
     days, amount = find_deficit(records)
     top3_days, top3_amount = top3_deficit(days, amount)
     for i in range(len(days)):
-        output += f'[NET PROFIT DEFICIT] DAY: {days[i]}, AMOUNT: SGD{amount[i]*-1}\n'
+        output += f'[NET PROFIT DEFICIT] DAY: {days[i]}, AMOUNT: SGD${amount[i]*-1}\n'
 
     if len(days) >= 3:
         number = 3
@@ -140,7 +140,7 @@ def output_fluctuate_scenario(records):
             order = '3RD'
 
          # *-1 to remove negative sign
-        output += f'[{order} NET PROFIT DEFICIT] DAY: {top3_days[i]}, AMOUNT: SGD{top3_amount[i]*-1}\n'
+        output += f'[{order} NET PROFIT DEFICIT] DAY: {top3_days[i]}, AMOUNT: SGD${top3_amount[i]*-1}\n'
     return output
 
 
